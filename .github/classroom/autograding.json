@@ -1,0 +1,104 @@
+{
+  "tests": [
+    {
+      "name": "Test1",
+      "setup": "",
+      "run": "python3 isracecarbounded.py",
+      "input": "GG",
+      "output": "False",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 10
+    },
+    {
+      "name": "Test2",
+      "setup": "",
+      "run": "python3 isracecarbounded.py",
+      "input": "GLL",
+      "output": "True",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 10
+    },
+    {
+      "name": "Test3",
+      "setup": "",
+      "run": "python3 isracecarbounded.py",
+      "input": "GLGGRRGG",
+      "output": "True",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 10
+    },
+    {
+      "name": "Test4",
+      "setup": "",
+      "run": "python3 isracecarbounded.py",
+      "input": "GRGGRLGGLG",
+      "output": "False",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 10
+    },
+    {
+      "name": "Test5",
+      "setup": "",
+      "run": "python3 isracecarbounded.py",
+      "input": "GLR",
+      "output": "False",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 10
+    },
+    {
+      "name": "Test6",
+      "setup": "",
+      "run": "python3 isracecarbounded.py",
+      "input": "GGRRGG",
+      "output": "True",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 10
+    },
+    {
+      "name": "Test7",
+      "setup": "",
+      "run": "python3 isracecarbounded.py",
+      "input": "GRGLRGLRG",
+      "output": "True",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 10
+    },
+    {
+      "name": "Test8",
+      "setup": "",
+      "run": "python3 isracecarbounded.py",
+      "input": "G",
+      "output": "False",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 10
+    },
+    {
+      "name": "Test9",
+      "setup": "",
+      "run": "python3 isracecarbounded.py",
+      "input": "GRGRGRGRGR",
+      "output": "True",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 10
+    },
+    {
+      "name": "Test10",
+      "setup": "",
+      "run": "python3 isracecarbounded.py",
+      "input": "GGGGLL",
+      "output": "True",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 10
+    }
+  ]
+}
