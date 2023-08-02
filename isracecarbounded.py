@@ -54,24 +54,39 @@ and form a loop after the 4th execution. Figure out why it's after the 4th execu
     """
 class Solution:
     def isracecarbounded(self, instructions):
-        #type instructions: string
-        #return type: boolean
-        initial_pos=[0,0]
-        cur_pos=[0,0]
-        #direction= ['S':0,'W':1,'N':2,'E':3] Reference for cur_dir (current direction)
-        cur_dir=2
-       
-    if len(input()) > 2:
-  # The input is more than 2 letters, so return True
-        print("True")
-    
-    if len(input()) < 2:
-        print("False")
-  # The input is not more than 2 letters, so return False
-            #TODO: Write code below to returnn a boolean value with the solution to the prompt.
-        
+        # type instructions: string
+        # return type: boolean
+        initial_pos = [0, 0]
+        cur_pos = [0, 0]
+        # direction = ['S': 0, 'W': 1, 'N': 2, 'E': 3] Reference for cur_dir (current direction)
+        cur_dir = 2
+        visited_positions = set()  # Set to store visited positions
+
+        for _ in range(4):  # The loop may be formed with multiple runs (maximum 4 runs)
+            for instruction in instructions:
+                if instruction == 'G':
+                    if cur_dir == 0:  # Facing north, move up
+                        cur_pos[1] += 1
+                    elif cur_dir == 1:  # Facing west, move left
+                        cur_pos[0] -= 1
+                    elif cur_dir == 2:  # Facing south, move down
+                        cur_pos[1] -= 1
+                    elif cur_dir == 3:  # Facing east, move right
+                        cur_pos[0] += 1
+                elif instruction == 'L':
+                    cur_dir = (cur_dir - 1) % 4  # Turn 90 degrees left
+                elif instruction == 'R':
+                    cur_dir = (cur_dir + 1) % 4  # Turn 90 degrees right
+
+                visited_positions.add(tuple(cur_pos))  # Add current position to visited set
+
+            if tuple(initial_pos) in visited_positions:
+                return True  # The racecar returned to the starting position, loop found
+
+        return False  # After 4 runs, no loop found
+
 def main():
-    input1=input()
+    input1 = input("Enter instructions: ")
     tc1 = Solution()
     ans = tc1.isracecarbounded(input1)
     print(ans)
